@@ -1,0 +1,10 @@
+snippet router "Express router"
+var express = require('express');
+var router = express.Router();
+
+router.${1:get}('${2:/}', function(req, res, next) {
+	${3}
+});
+
+module.exports = router;
+endsnippet
