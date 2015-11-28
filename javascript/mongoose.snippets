@@ -1,0 +1,18 @@
+snippet mmodel "Mongoose model"
+var mongoose = require('mongoose'),
+	Schema = mongoose.Schema,
+	uuid = ObjectId = mongoose.Schema.Types.ObjectId;
+
+var ${1} = new Schema({
+	_id: uuid,
+	${3}
+	date_created: { type: Date, required: true, default: Date.now}
+	date_updated: { type: Date, required: true, default: Date.now}
+});
+
+module.exports = mongoose.model('$1', $1);
+endsnippet
+
+snippet mfield "Mongoose model field"
+${1}: {type: ${2}}${0}
+endsnippet
