@@ -1,0 +1,33 @@
+snippet route "a route"
+server.route({
+	method: '${1}',
+	path: '/${2}',
+	handler: function (request, reply) {
+		${0}
+	}
+});
+endsnippet
+
+snippet static "returning a static file"
+reply.file('./${0}');
+endsnippet
+
+
+snippet hapi "hapi initialization"
+'use strict';
+
+const Hapi = require('hapi');
+const server = new Hapi.Server();
+
+server.connection({port: 3000});
+
+// create your routes
+${0}
+
+server.start((err) => {
+	if (err) {
+		throw err;
+	}
+	console.log('Server started at:', server.info.uri);
+});
+endsnippet
