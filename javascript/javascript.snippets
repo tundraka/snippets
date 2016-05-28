@@ -1,3 +1,15 @@
 snippet strict "strict"
 'use strict';
 endsnippet
+
+snippet get "getter"
+get ${1}() {
+	this.$1 = $1;
+}
+endsnippet
+
+snippet set "setter"
+set ${1}($1) {
+	this.$1 = $1;
+}
+endsnippet
